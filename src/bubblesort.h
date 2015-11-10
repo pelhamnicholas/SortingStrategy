@@ -3,7 +3,7 @@
 
 #include "container.h"
 
-class BubbleSort {
+class BubbleSort : public SortAlgorithm {
     private:
 
     public:
