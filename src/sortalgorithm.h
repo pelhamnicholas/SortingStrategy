@@ -6,7 +6,9 @@
 class SortAlgorithm {
     private:
     public:
-        sort(Container *) {} = 0;
+        SortAlgorithm() {};
+        ~SortAlgorithm() {};
+        virtual void sort(Container *) {} = 0;
 };
 
 #endif
