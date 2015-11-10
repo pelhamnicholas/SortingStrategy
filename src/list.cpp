@@ -48,5 +48,5 @@ void List::set_sort(SortAlgorithm * sortAlgorithm) {
 }
 
 void List::sort() {
-    sortAlgo.sort(this);
+    sortAlgo->sort(this);
 }
