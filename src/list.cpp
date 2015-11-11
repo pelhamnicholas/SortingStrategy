@@ -5,7 +5,7 @@ List::List() {
 
 int List::at(int i) {
     list<int>::iterator itr = integer_list.begin();
-    for (int j = 0; j < i; ++i)
+    for (int j = 0; j < i; ++j)
         itr++;
     return *itr;
 }
