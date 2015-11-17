@@ -2,16 +2,15 @@
 #define MERGESORT_H
 
 #include "container.h"
+#include <vector>
 
 class MergeSort : public SortAlgorithm {
-    protected:
-    int max(int, int);
-    void merge_help(int, int, int, int, int);
-
+    private:
     public:
         MergeSort() {};
         ~MergeSort() {};
         void sort(Container *);
+        void merge_sort(Container *, int, int);
 };
 
 #endif

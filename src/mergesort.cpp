@@ -1,42 +1,29 @@
 #include "mergesort.h"
 
-void MergeSort::merge_help(int left, int left_end, int right, int right_end, int numbers) {
-    while(left != left_end)
-    {
-      if(left < right || right == right_end)
-      {
-        numbers = left;
-        left++;
-      }
-      else
-      {
-        numbers = right;
-        right++;
-      }
-    }
-    
-    while (right != right_end)
-    {
-      numbers = right;
-      right++;
-      numbers++;
-    }
+void MergeSort::sort(Container * container) {
+    merge_sort(container, 0, container->size()-1);
 }
 
-void MergeSort::sort(Container* container) {
-    if(container->size() <=1)
-    {
-      return;
-    }
-    
-    unsigned middle = container->size() / 2;
-    vector<int> left (container->begin(), container->begin() + middle);
-    vector<int> right (container->begin() + middle, container->end());
-    
-    sort(left);
-    sort(right);
-    
-    merge_help(left.begin(), left.end(), right.begin(), right.end(), container->begin());
-    
+void MergeSort::merge_sort(Container * container,
+        int start, int end) {
+    if (end - start < 2)
+        return;
+
+    int left = start;
+    int mid = (end-start)/2+left;
+    int right = (end-start)/2+1+left;
+
+    merge_sort(container, start, mid);
+    merge_sort(container, right, end);
+
+    while (left <= mid && right <= end){
+        if (container->at(left) <= container->at(right))
+            left++;
+        else {
+            container->swap(left, right);
+            left++;
+            mid++;
+            right++;
+        }
     }
 }

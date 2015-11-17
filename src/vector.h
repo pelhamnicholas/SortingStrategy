@@ -12,14 +12,16 @@ class Vector : public Container {
 		vector<int> integer_vector;
 
 	public:
-		vector();
-		~vector() {}; //destructor
+		Vector();
+		~Vector() {}; //destructor
 		int at(int);
 		void swap(int, int);
-		void insert(int) {} = 0;
-		void print() {} = 0;
-		int size() {} = 0;
+		void insert(int);
+		void print();
+		int size();
 		void set_sort(SortAlgorithm*);
 		void sort();
 	
-}
+};
+
+#endif

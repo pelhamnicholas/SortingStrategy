@@ -1,8 +1,10 @@
 #include <iostream>
 #include "container.h"
 #include "list.h"
+#include "vector.h"
 #include "bubblesort.h"
 #include "selectionsort.h"
+#include "mergesort.h"
 
 using namespace std;
 
@@ -58,7 +60,7 @@ void containerMenu(Container *& container) {
             container = new List();
             break;
         case 2:
-            //container = new Vector();
+            container = new Vector();
             break;
     }
 }
@@ -99,7 +101,7 @@ void sortMenu(Container * container) {
             container->set_sort(new SelectionSort());
             break;
         case 3:
-            //container->set_sort(new MergeSort());
+            container->set_sort(new MergeSort());
             break;
     }
 }
