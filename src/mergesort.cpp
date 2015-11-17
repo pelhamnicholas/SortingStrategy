@@ -6,7 +6,7 @@ void MergeSort::sort(Container * container) {
 
 void MergeSort::merge_sort(Container * container,
         int start, int end) {
-    if (end - start < 2)
+    if (end - start < 1)
         return;
 
     int left = start;
