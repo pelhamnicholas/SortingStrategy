@@ -1,53 +1,57 @@
 #include "vector.h"
+#inclue <iostream>
+#include <vector>
+
+using namespace std;
+
+
 vector::vector()
-{
-	size = 0;
-	capacity = 0;
-}
+{}
 
 vector::~vector()
-{
-
-}
+{}
 
 int vector::at(int x)
 {
-	return vector.at(x);
+	return integer_vector.at(x);
 }
 
 void vector::swap(int x, int y)
 {
 	int temp = 0;
-	temp = vector.at(x);
-	vector.at(x) = vector.at(y);
-	vector.at(y) = temp;
+	temp = integer_vector.at(x);
+	integer_vector.at(x) = integer_vector.at(y);
+	integer_vector.at(y) = temp;
 }
 
 void vector::insert(int x)
 {
-	vector.pushback(x);
+	integer_vector.insert(x);
 }
 
 void vector::print(int x)
 {
-	vector.sort();
-	for(int i = 0; i < vector.size(); i++)
+  cout << "vector: [";
+  
+	for(int i = 0; i < integer_vector.size(); i++)
 	{
-		cout << vector.at(i) << endl;
+		cout << integer_vector.at(i) << " ";
 	}
+ 
+  cout << "]" << endl;
 }
 
 int vector::size()
 {
-	return vector.size();
+	return integer_vector.size();
 }
 
-void vector::set_sort(SortAlgorithm*)
+void vector::set_sort(SortAlgorithm* sortAlgorithm)
 {
-
+  sortAlgo = sortAlgorithm;
 }
 
 void vector::sort()
 {
-
+  sortAlgo->sort(this);
 }

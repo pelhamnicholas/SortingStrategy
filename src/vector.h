@@ -2,15 +2,18 @@
 #define VECTOR_H
 #include "container.h"
 
+#include <iostream>
+#include <vector>
 
-class Vector : public Container:
+using namespace std;
+
+class Vector : public Container {
 	private:
-		int size;
-		int capacity;
+		vector<int> integer_vector;
 
 	public:
 		vector();
-		~vector();
+		~vector() {}; //destructor
 		int at(int);
 		void swap(int, int);
 		void insert(int) {} = 0;
@@ -19,3 +22,4 @@ class Vector : public Container:
 		void set_sort(SortAlgorithm*);
 		void sort();
 	
+}
